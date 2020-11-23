@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.1.75:4000/about.json"
+        val url = "https://black-gabs.herokuapp.com/about.json"
         val recyclerView : RecyclerView = findViewById(R.id.rvstudents)
 
         val jsonRequest : StringRequest = StringRequest(Request.Method.GET, url,
