@@ -3,8 +3,10 @@ package mx.uach.blackgabsandroid.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import mx.uach.blackgabsandroid.R
 import mx.uach.blackgabsandroid.models.Student
 
@@ -14,9 +16,9 @@ class StudentAdapter(val students : List<Student>) : RecyclerView.Adapter<Studen
         val name : TextView = itemView.findViewById(R.id.txtNombre)
         val apellido : TextView = itemView.findViewById(R.id.txtApellido)
         val matricula : TextView = itemView.findViewById(R.id.txtMatricula)
+        val foto : ImageView = itemView.findViewById(R.id.imgPhoto)
 
 
-        //val tvlastname : TextView = itemView.findViewById(R.id.tvlastname)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : ViewHolder {
@@ -34,9 +36,9 @@ class StudentAdapter(val students : List<Student>) : RecyclerView.Adapter<Studen
         val student : Student = students.get(position)
         holder.name.text = student.name
         holder.apellido.text = student.lastname
-        holder.matricula.text = "329610"
+        holder.matricula.text = student.student_id
+        Picasso.get().load(student.image_url).into(holder.foto)
 
-        //holder.tvlastname.text = student.lastname
 
     }
 }
