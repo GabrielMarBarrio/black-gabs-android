@@ -11,8 +11,12 @@ import mx.uach.blackgabsandroid.models.Student
 
 class StudentAdapter(val students : List<Student>) : RecyclerView.Adapter<StudentAdapter.ViewHolder>(){
     inner class ViewHolder(listItem : View) : RecyclerView.ViewHolder(listItem) {
-        val tvname : TextView = itemView.findViewById(R.id.tvname)
-        val tvlastname : TextView = itemView.findViewById(R.id.tvlastname)
+        val name : TextView = itemView.findViewById(R.id.txtNombre)
+        val apellido : TextView = itemView.findViewById(R.id.txtApellido)
+        val matricula : TextView = itemView.findViewById(R.id.txtMatricula)
+
+
+        //val tvlastname : TextView = itemView.findViewById(R.id.tvlastname)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : ViewHolder {
@@ -28,8 +32,11 @@ class StudentAdapter(val students : List<Student>) : RecyclerView.Adapter<Studen
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val student : Student = students.get(position)
-        holder.tvname.text = student.name
-        holder.tvlastname.text = student.lastname
+        holder.name.text = student.name
+        holder.apellido.text = student.lastname
+        holder.matricula.text = "329610"
+
+        //holder.tvlastname.text = student.lastname
 
     }
 }
