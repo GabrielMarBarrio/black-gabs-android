@@ -2,7 +2,7 @@
 
 A simple mobile app, that requests a JSON from a web server and dsiplays the information in a table-like format.
 
-This is the mobile portion of a two part project, the server portion can be found at https://github.com/GabrielMarBarrio/black-gabs-android.
+This is the mobile portion of a two part project, the server portion can be found at https://github.com/GabrielMarBarrio/black-gabs-server.
 
 ## How to run
 
